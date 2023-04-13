@@ -1,13 +1,17 @@
-from flask import Flask, render_template, redirect, session, request
+from flask import Flask, render_template, redirect, session
 from functools import wraps
 import pymongo
 from mic import list
+import os
+from dotenv import load_dotenv
+
+load_dotenv()
 
 app = Flask(__name__)
 app.secret_key = b'\xf6\x90_\x7f~x\xe2{Q\x13a4(\xff{k'
 
 # Database
-client = pymongo.MongoClient('mongodb+srv://tatkariprem2002:ToOhHiPd7lYn5hFj@simplyfreshdb.twmkedc.mongodb.net/?retryWrites=true&w=majority')
+client = pymongo.MongoClient(os.getenv("MONGOURI"))
 db = client.vts
 
 # Decorators
