@@ -11,7 +11,6 @@ from time import sleep
 # nltk.download('punkt')
 from nltk.corpus import stopwords
 from nltk.tokenize import word_tokenize, sent_tokenize
-from flask import Flask, redirect
 r = sr.Recognizer()
 
 text1 = """There are many techniques available to generate extractive summarization
