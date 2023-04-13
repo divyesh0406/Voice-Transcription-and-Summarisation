@@ -1,8 +1,8 @@
-from flask import Flask, redirect, make_response
+from flask import Flask, redirect
 from app import app
 from user.models import User
 from threading import Thread
-from mic import transcript,sumarizer
+from mic import transcript
 
 
 @app.route('/user/signup', methods=['POST'])
@@ -21,7 +21,7 @@ def logout():
 def transcription():
     thread = Thread(target=transcript)
     thread.start()
-    return redirect('/main/')
+    return ('', 204)
 
 @app.route('/main/transcriptstop', methods=('GET','POST'))
 def transcriptionstop():

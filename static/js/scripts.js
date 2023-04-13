@@ -9,7 +9,7 @@ $("form[name=signup_form").submit(function(e) {
         data: data,
         dataType: "json",
         success: function(res) {
-            window.location.href = "/main/"; 
+            window.location.href = "/record/"; 
         },
         error: function(res) {
             console.log(res);
@@ -31,7 +31,7 @@ $("form[name=login_form").submit(function(e) {
         data: data,
         dataType: "json",
         success: function(res) {
-            window.location.href = "/main/"; 
+            window.location.href = "/record/"; 
         },
         error: function(res) {
             console.log(res);
@@ -42,4 +42,8 @@ $("form[name=login_form").submit(function(e) {
     e.preventDefault();
 });
 
-
+$(".record").on("click",function() {
+    $(this).css("background-color", "red");
+    $(this).text("Recording");
+    $(".t").removeClass("t");
+});

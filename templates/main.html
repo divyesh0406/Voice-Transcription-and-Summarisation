@@ -1,7 +1,9 @@
 {% extends "base.html" %}
 
 {% block content %}
-
+	<div>
+		<a href="/user/logout" class="btn logout">Log Out</a>
+	</div>
 	<div class="card-wrapper">
         
 		<div class="card">
@@ -22,17 +24,9 @@
 			</p>
 		</div>
 	</div>
-	<p class="center">You are currently logged in.</p>
-	<div class="card-wrapper">
-		<div>
-            <a href="/user/logout" class="btn">Log Out</a>
-        </div>
-        
+	<div class="card-wrapper wrap1">
         <div>
-            <a href="/main/transcript" class="btn">Transcript</a>
-        </div>
-		<div>
-            <a href="/main/transcriptstop" class="btn">Stop Transcript</a>
+            <a href="/record/" class="btn transcript">New</a>
         </div>
 	</div>
 {% endblock %}

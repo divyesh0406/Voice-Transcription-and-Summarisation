@@ -33,7 +33,13 @@ def dashboard():
     return render_template('dashboard.html')
 
 @app.route('/main/')
+@login_required
 def main():
     return render_template('main.html' , list=list)
+
+@app.route('/record/')
+@login_required
+def record():
+    return render_template('record.html')
 
 
