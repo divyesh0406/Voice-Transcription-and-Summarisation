@@ -8,7 +8,7 @@ from dotenv import load_dotenv
 load_dotenv()
 
 app = Flask(__name__)
-app.secret_key = b'\xf6\x90_\x7f~x\xe2{Q\x13a4(\xff{k'
+app.secret_key = os.getenv("SECRETKEY")
 
 # Database
 client = pymongo.MongoClient(os.getenv("MONGOURI"))
